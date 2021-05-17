@@ -1,8 +1,9 @@
 
+
 <html>
 <head>
     <!--Add your title here-->
-    <title>Theo Christopher</title>
+    <title>Text Theo Christopher</title>
     
     <!--This code makes the website responsive-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +29,7 @@
     <link rel="shortcut icon" href="TheoProfile.png" type="image/x-icon">
     
     <!--These are the stylesheets for the page-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CArvo:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500%7COpen+Sans:100,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
     <link rel="stylesheet" href="https://superphone.io/f/assets/stylesheets/intlTelInput.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -61,35 +62,37 @@
                 });
     
                 // Send post to API
-                $.ajax({
-                    url: 'https://superphone.io/w/GYgj8E', // Url where to submit the request
-                    type: "POST",
-                    beforeSend: function (request) {
-                        request.setRequestHeader("Access-Control-Allow-Origin", "*");
-                    },
-                    dataType: 'json',
-                    contentType: 'application/json',
-                    data: JSON.stringify(requestData),
-                    success: function (result) {
-                        // You can see the result from the console
-                        // tab of the developer tools
-                        console.log(result);
-                        $('.custom-form').hide();
-                        $('.form-success').show();
-                    },
-                    error: function (xhr, resp, text) {
-                        $('.form-error').show();
-                        $('#submitButton').prop('disabled', false);
-                    }
-                });
+		$.ajax({
+                url: 'https://superphone.io/w/GYgj8E',
+                type: "GET",
+                beforeSend: function (request) {
+                    // request.setRequestHeader("Access-Control-Allow-Origin", "*");
+                },
+                // dataType: 'json',
+                // contentType: 'application/json',
+                data: requestData,
+                success: function (result) {
+                    // You can see the result from the console
+                    // tab of the developer tools
+                    // console.log(result);
+                    $('.custom-form').hide();
+                    $('.form-success').show();
+                },
+                error: function (xhr, resp, text) {
+                    $('.form-error').show();
+                    $('#submitButton').prop('disabled', false);
+                }
+	        });
             });
         });
     </script>
+
     
     <!--This sets the color scheme and font style of the page-->
     <style>
     body {
-    background: linear-gradient(to bottom, #f9f9f9 50%, #fff 100%);
+    background: linear-gradient(to bottom, #000000 50%, #101010 100%);
+    color: white;
         }
 
     .page-center {
@@ -97,43 +100,31 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url("twentyfour_background_3.png");
+    background-image: url("exttheo.directed&editorbytheochristopher24.jpg");
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
         }
         
         *{
-	font-family: 'Poppins', sans-serif;
-    color: #abacae;
-    font-size: 12px;
-    font-weight: 300;
-        }
-
-        h1 {
-	font-family: 'Open Sans', sans-serif;
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: 700;
+	font-family: 'Oswald', sans-serif;
         }
 
     button#submitButton {
-    font-family: 'Open Sans', sans-serif;
-    letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin: 0px 0px;
+    margin: 15px 0px;
     width: 100%;
     color: white;
-    padding: 10px 30px;
-    font-size: 14px;
-    border: 1px solid #478dd8;
-    border-radius: 1px;
-    background: #ED4105;
+    padding: 8px 45px;
+    font-size: 19px;
+    border: 1px solid white;
+    border-radius: 0px;
+    background: #101010;
         }
 
     button#submitButton:hover {
-    color: #478dd8;
-    background: #f9f9f9;
+    color: black;
+    background: white;
         }
 
     span.country-name {
@@ -143,17 +134,28 @@
         }
       
     input#phone {
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
+    color: white;
     border: 0px;
-    border-bottom: 2px solid lightgrey;
-    outline: none;
-    background: #f9f9f9;
+    border-bottom: 2px solid white;
+    background: #00000030;
     padding: 26px 46px;
-
+    font-size: 17px;
     border-radius: 0px;
-    font-weight: 300;
-        }   
-
+    font-weight: 700;
+        }
+        
+    input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    height: 38px;
+        }
+    
     .form-error {
     padding-left: 12px;
     display: none;
@@ -167,7 +169,7 @@
     
     .parsley-minlength {
     padding-top: 5px;
-    color: #D85959;
+    color: #ffffff;
         }
     
     .iti-flag {
@@ -183,11 +185,10 @@
         }
         
     .form-success {
-    font-family: 'Open Sans', sans-serif;
     border-radius: 5px;
     padding: 5px;
     display: none;
-    background: none;
+    background: #00000020;
     color: white;
     font-size: 19px;
     width: 100%;
@@ -207,15 +208,8 @@
     <div class="page-center">
     <div class="custom-form">
         <div class="container">
-            <p class="text-center">
-            <iframe src="https://player.vimeo.com/video/413389223?autoplay=1" width="400" height="225" frameborder="0" allow="autoplay; fullscreen" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></p>
-
-            <h1 class="text-center">Theo Christopher<br>Editor / Creative Director</h1>
-            
-            <p class="text-center">Co-Founder of The TwentyFour Agency. 
-		    <br>Dedicated to the success of the underdogs.</p>
-
-            <p class="text-center">Drop your number and I'll shoot you a text with my portfolio.</p>
+            <h1 class="text-center" style="font-weight: bold">THEO CHRISTOPHER</h1>
+            <p class="text-center" style="font-size: 21px">PLEASE ENTER YOUR PHONE NUMBER BELOW<br>AND I WILL SHOOT YOU A TEXT RIGHT BACK:</p>
             <form id="addContact" class="form-horizontal" style="min-width: 100%" method="POST" action="#" autocomplete="false" data-parsley-validate>
                 <div class="form-group">
                     <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-4">
@@ -224,7 +218,7 @@
                                 data-parsley-minlength="9" data-parsley-required>
                     </div>
                     <div class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1 col-lg-4 col-lg-offset-4">
-                        <button type="submit" id="submitButton" class="button">Enter TwentyFour</button>
+                        <button type="submit" id="submitButton" class="btn btn-default">Submit</button>
                     </div>
                 </div>
     
